@@ -2,10 +2,10 @@
 
 ## Exercise I
 
-a)
+a) Run time complexity is O(n).  Once it reaches the nth iteration.. it will equal n*(n*n) which I believe will shorten down to linear complexity
 
 
-b)
+b) Run time complexity is O(n^2) 
 
 
 c)
