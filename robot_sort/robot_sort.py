@@ -93,11 +93,77 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
+
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        if self.can_move_right() == False: 
+            return
+        self.swap_item()
+
+        while True: 
+            while self.can_move_right():
+                self.move_right()
+                if self.compare_item() == 1: #items value is greater, lets swap
+                    self.swap_item()
+            while self.compare_item() != None: #if its not lets move left then swap
+                self.move_left()
+            self.swap_item()
+            if self.can_move_right() == False: #It will stay in place and increment the time counter by 1
+                return
+            self.move_right()
+            self.swap_item()
+       
+
+
+        
+
+"""
+ while True:
+            while True:
+                if self.can_move_right() == False:
+                    break
+                self.swap_item()
+                self.move_right()
+
+Initial plan... too many nested while true ... not a fan 
+
+
+
+if self.can_move_right ... == False  we are at the end of the list.
+If while true... we swap the item? and move right 
+
+ Compare the held item with the item in front of the robot:
+        If the held item's value is greater, return 1.
+        If the held item's value is less, return -1.
+        If the held item's value is equal, return 0.
+        If either item is None, return None.
+
+Compare the items ... check for if can move right 
+
+if they're equal we still swap?? ... While they're not none we move left?  
+
+So basically we've 
+
+"""
+
+
+
+"""
+You have been given a robot with very basic capabilities:
+
+  * It can move left or right.
+  * It can pick up an item
+    * If it tries to pick up an item while already holding one, it will swap the items instead.
+  * It can compare the item it's holding to the item in front of it.
+  * It can switch a light on its head on or off.
+
+Your task is to program this robot to sort lists using ONLY these abilities.
+
+No variables, no instance variables directly, no libraries/class methods, 
+"""
+
+
 
 
 if __name__ == "__main__":
